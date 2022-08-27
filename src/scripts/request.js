@@ -13,9 +13,9 @@ export class ApiRequests {
         })
         .then(res => res.json())
         .then(res => {
-            localStorage.setItem("@kenzieBlog:token", res.token);
-            localStorage.setItem("@kenzieBlog:userId", res.userId);
             if(res.token) {
+                localStorage.setItem("@kenzieBlog:token", res.token);
+                localStorage.setItem("@kenzieBlog:userId", res.userId);
                 window.location.assign('../pages/mainpage.html');
             }
             return res; 
