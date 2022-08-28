@@ -127,8 +127,51 @@ li {
     padding: 13px 0 22px 0;
 }
 
-li > img {
+li > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+}
+
+li > div > img {
     width: 79px;
     height: 79px;
     border-radius: 50%;
 }
+
+li > div > h2 {
+    font-size: 24px;
+    color: #030000;
+    font-weight: 700;
+}
+
+li > p, li > span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    word-wrap: break-word;
+}
+
+li > span {
+    margin-top: 12px;
+}
+
+.options-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.edit-btn, .remove-btn {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    cursor: pointer;
+} 
+
+
+

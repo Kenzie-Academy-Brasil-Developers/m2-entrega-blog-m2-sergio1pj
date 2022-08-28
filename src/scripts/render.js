@@ -25,7 +25,8 @@ export class Render {
         console.log(post)
         const liTag = document.createElement('li');
         const imgTag = document.createElement('img');
-        const spanTag = document.createElement('span');
+        const h2Tag = document.createElement('h2');
+        const divUserTag = document.createElement('div');
         const pTag = document.createElement('p');
         const spanDateTag = document.createElement('span');
         const divTag = document.createElement('div');
@@ -34,8 +35,8 @@ export class Render {
         const user = localStorage.getItem('@kenzieBlog:userId');
 
         imgTag.src = post.user.avatarUrl;
-        spanTag.innerText = `${post.user.username}`;
-        pTag.innerText = `${post.user.content}`;
+        h2Tag.innerText = `${post.user.username}`;
+        pTag.innerText = `${post.content}`;
         const dateReceived = post.createdAt.substr(0,10).replace(/-/g,"/");
         let year = dateReceived.split("/")[0];
         let month = dateReceived.split("/")[1];
@@ -45,13 +46,19 @@ export class Render {
         btnEditTag.src = "../assets/edit.png";
         btnRemoveTag.src = "../assets/trash.png";
 
+        divTag.classList.add("options-user");
+        btnEditTag.classList.add("edit-btn");
+        btnRemoveTag.classList.add("remove-btn");
+        
         divTag.appendChild(btnEditTag);
         divTag.appendChild(btnRemoveTag);
+        divUserTag.appendChild(imgTag);
+        divUserTag.appendChild(h2Tag);
 
         if(post.user.id === user) {
-            liTag.append(imgTag,spanTag,pTag,spanDateTag,divTag);
+            liTag.append(divUserTag,pTag,spanDateTag,divTag);
         }
-        liTag.append(imgTag,spanTag,pTag,spanDateTag);
+        liTag.append(divUserTag,pTag,spanDateTag);
         return liTag;
     }
 }
