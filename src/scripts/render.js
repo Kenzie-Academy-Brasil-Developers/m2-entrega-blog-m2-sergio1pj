@@ -48,8 +48,11 @@ export class Render {
         btnRemoveTag.src = "../assets/trash.png";
 
         divTag.classList.add("options-user");
+        btnRemoveTag.classList.add("delete-post-btn");
+        btnEditTag.classList.add("edit-post-btn")
         btnEditTag.classList.add("edit-btn");
         btnRemoveTag.classList.add("remove-btn");
+        btnRemoveTag.id = `${post.id}`;
 
         divUserTag.append(imgTag,h2Tag);
         divTag.append(btnEditTag, btnRemoveTag);
