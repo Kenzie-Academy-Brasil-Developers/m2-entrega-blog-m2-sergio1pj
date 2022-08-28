@@ -14,7 +14,8 @@ export class Render {
 
     static postsList(posts) {
         const postsTag = document.getElementById("posts-list");
-        console.log(posts.data)
+        //console.log(posts)
+        //console.log(posts.data)
         posts.data.forEach(post => {
             const card = Render.createCard(post);
             postsTag.appendChild(card);
@@ -22,7 +23,7 @@ export class Render {
     };
 
     static createCard(post) {
-        console.log(post)
+        //console.log(post)
         const liTag = document.createElement('li');
         const imgTag = document.createElement('img');
         const h2Tag = document.createElement('h2');
@@ -49,7 +50,7 @@ export class Render {
         divTag.classList.add("options-user");
         btnEditTag.classList.add("edit-btn");
         btnRemoveTag.classList.add("remove-btn");
-        
+
         divTag.appendChild(btnEditTag);
         divTag.appendChild(btnRemoveTag);
         divUserTag.appendChild(imgTag);

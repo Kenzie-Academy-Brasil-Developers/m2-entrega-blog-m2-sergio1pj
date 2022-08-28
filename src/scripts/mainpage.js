@@ -23,6 +23,22 @@ class MainPage {
 
         Render.postsList(posts);
     }
+
+    static createPost() {
+        const postTxt = document.getElementById("post-txt");
+        const addPostBtn = document.getElementById("add-post-btn");
+
+        addPostBtn.addEventListener("click", async () => {
+            const data = {
+                "content": postTxt.value 
+            };
+
+            await ApiRequests.createUserPost(data);
+            const newPosts = await ApiRequests.getPosts();
+            console.log(newPosts)
+            this.showPosts(newPosts);
+        });
+    }
 }
 
 const userId = Number(localStorage.getItem("@kenzieBlog:userId"));
@@ -32,3 +48,4 @@ const postsApi = await ApiRequests.getPosts();
 Render.headerUsername(user.username, user.avatarUrl);
 MainPage.logout();
 MainPage.showPosts(postsApi);
+MainPage.createPost();

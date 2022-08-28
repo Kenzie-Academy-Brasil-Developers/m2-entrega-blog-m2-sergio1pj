@@ -53,7 +53,7 @@ export class ApiRequests {
     };
 
     static async getPosts() {
-        const posts = await fetch(`${this.baseUrl}/posts?page=11`, {
+        const posts = await fetch(`${this.baseUrl}/posts?page=${8}`, {
             method: "GET",
             headers: this.headers
         })
@@ -62,5 +62,18 @@ export class ApiRequests {
         .catch(err => console.log(err));
 
         return posts;
+    };
+
+    static async createUserPost(content) {
+        const newPost = await fetch(`${this.baseUrl}/posts`, {
+            method: "POST",
+            headers: this.headers,
+            body: JSON.stringify(content)
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+
+        return newPost;
     }
 }
