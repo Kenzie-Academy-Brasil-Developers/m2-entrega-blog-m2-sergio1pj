@@ -40,8 +40,22 @@ class MainPage {
             console.log(newPosts)
             this.showPosts(newPosts);
         });
-    }
-}
+    };
+
+    static deletePost() {
+        const deleteBtn = document.getElementById("delete-post");
+        const deleteModal = document.querySelector(".modal-delete");
+        deleteBtn.addEventListener("click", async () => {
+            const postId = Number(localStorage.getItem('@kenzieBlog:postId'));
+            await ApiRequests.deletePost(postId);
+            deleteModal.classList.add('hidden');
+            localStorage.removeItem('@kenzieBlog:postId');
+            const posts = await ApiRequests.getPosts()
+            this.showPosts(posts);
+            Modal.showDeleteModal();
+        });
+    };
+};
 
 const userId = Number(localStorage.getItem("@kenzieBlog:userId"));
 const user = await ApiRequests.user(userId);
@@ -51,3 +65,5 @@ Render.headerUsername(user.username, user.avatarUrl);
 MainPage.logout();
 MainPage.showPosts(postsApi);
 MainPage.createPost();
+Modal.showDeleteModal();
+MainPage.deletePost();
