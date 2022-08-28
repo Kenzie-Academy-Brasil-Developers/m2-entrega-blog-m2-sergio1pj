@@ -53,7 +53,7 @@ export class ApiRequests {
     };
 
     static async getPosts() {
-        const posts = await fetch(`${this.baseUrl}/posts?page=${8}`, {
+        const posts = await fetch(`${this.baseUrl}/posts?page=1`, {
             method: "GET",
             headers: this.headers
         })

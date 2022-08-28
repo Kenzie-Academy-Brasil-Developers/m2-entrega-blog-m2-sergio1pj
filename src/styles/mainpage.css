@@ -160,11 +160,12 @@ li > span {
 
 .options-user {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 12px;
     margin-top: 8px;
-}
+} 
 
 .edit-btn, .remove-btn {
     width: 47px;

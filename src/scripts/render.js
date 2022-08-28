@@ -51,15 +51,12 @@ export class Render {
         btnEditTag.classList.add("edit-btn");
         btnRemoveTag.classList.add("remove-btn");
 
-        divTag.appendChild(btnEditTag);
-        divTag.appendChild(btnRemoveTag);
-        divUserTag.appendChild(imgTag);
-        divUserTag.appendChild(h2Tag);
-
-        if(post.user.id === user) {
-            liTag.append(divUserTag,pTag,spanDateTag,divTag);
-        }
+        divUserTag.append(imgTag,h2Tag);
+        divTag.append(btnEditTag, btnRemoveTag);
         liTag.append(divUserTag,pTag,spanDateTag);
+        if(post.user.id == user) {
+            liTag.append(divTag);
+        }
         return liTag;
     }
 }
