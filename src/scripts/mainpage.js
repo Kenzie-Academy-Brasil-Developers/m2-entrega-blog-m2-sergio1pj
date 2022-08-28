@@ -39,20 +39,21 @@ class MainPage {
             postTxt.value = "";
             console.log(newPosts)
             this.showPosts(newPosts);
+            Modal.showDeleteModal();
+            Modal.hideDeleteModal();
         });
     };
 
     static deletePost() {
         const deleteBtn = document.getElementById("delete-post");
-        const deleteModal = document.querySelector(".modal-delete");
         deleteBtn.addEventListener("click", async () => {
             const postId = Number(localStorage.getItem('@kenzieBlog:postId'));
             await ApiRequests.deletePost(postId);
-            deleteModal.classList.add('hidden');
             localStorage.removeItem('@kenzieBlog:postId');
             const posts = await ApiRequests.getPosts()
             this.showPosts(posts);
             Modal.showDeleteModal();
+            Modal.hideDeleteModal();
         });
     };
 };
@@ -67,3 +68,4 @@ MainPage.showPosts(postsApi);
 MainPage.createPost();
 Modal.showDeleteModal();
 MainPage.deletePost();
+Modal.hideDeleteModal();
