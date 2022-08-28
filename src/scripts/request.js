@@ -89,5 +89,18 @@ export class ApiRequests {
         .catch(err => console.log(err));
 
         return deleteUserPost;
+    };
+
+    static async updatePost(content, userId) {
+        const updateUserPost = await fetch(`${this.baseUrl}/posts/${userId}`, {
+            method: "PATCH",
+            headers: this.headers,
+            body: JSON.stringify(content)
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+
+        return updateUserPost;
     }
 }
