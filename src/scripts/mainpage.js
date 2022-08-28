@@ -1,5 +1,6 @@
 import { ApiRequests } from "./request.js";
 import { Render } from "./render.js";
+import { Modal } from "./modal.js";
 
 class MainPage {
     static logout() {

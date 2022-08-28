@@ -17,11 +17,24 @@
         <button type="button" id="logout-btn">Logout</button>
     </header>
     <main>
-        <form>
+        <form id="form-post">
             <input id = "post-txt" type="text" placeholder="No que está pensando?">
             <button id="add-post-btn" type="button">+</button>
         </form>
         <ul id="posts-list"></ul>
+        <section class="modal-delete hidden">
+            <form id="modal-delete-form">
+                <p>Deseja deletar esse poster?</p>
+                <button id="delete-post" type="button">Deletar</button>
+            </form>
+        </section>
+        <section class="modal-edit">
+            <form id="modal-edit-form">
+                <p>Editar</p>
+                <input type="text" id="edit-input">
+                <button id="edit-btn" type="button">Enviar</button>
+            </form>
+        </section>
     </main>
     <script type="module" src="../scripts/mainpage.js"></script>
 </body>

@@ -62,11 +62,11 @@ header > button:hover {
     border: 1px solid #5C5D8D;
 }
 
-form {
+#form-post {
     position: relative;
 }
 
-form > input {
+#form-post > input {
     border: none;
     width: calc(100% - 20px);
     min-height: 110px;
@@ -82,7 +82,7 @@ form > input:focus {
     outline-color: #5C5D8D;
 }
 
-form > button {
+#add-post-btn {
     position: absolute;
     bottom: 3px;
     right: 24px;
@@ -97,7 +97,7 @@ form > button {
     cursor: pointer;
 }
 
-form > button:hover {
+#add-post-btn:hover {
     background-color: white;
     color: #5C5D8D;
     border: 1px solid #5C5D8D;
@@ -174,5 +174,68 @@ li > span {
     cursor: pointer;
 } 
 
+.modal-delete, .modal-edit {
+    background-color: #00000090;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
 
+#modal-delete-form, #modal-edit-form {
+    width: calc(100% - 40px);
+    padding: 50px 0 25px 0;
+    background-color: #6495ED;
+    color: white;
+    border-radius: 10px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#modal-delete-form > p, #modal-edit-form > p {
+    padding: 0 10px;
+    font-weight: 700;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#delete-post, #edit-btn {
+    background-color: #FF3F5B;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+#edit-btn {
+    background-color: #5C5D8D;
+}
+
+.hidden {
+    display: none;
+} 
+
+#modal-edit-form > input {
+    border: none;
+    width: calc(100% - 50px);
+    min-height: 110px;
+    background-color: #ECF0F1;
+    border-radius: 20px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 20px;
+}
 
