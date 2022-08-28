@@ -5,6 +5,7 @@ export class ApiRequests {
         "Content-Type": "application/json",
         Authorization: `Bearer ${this.token}`
     };
+
     static async login(body) {
         const userLogin = await fetch(`${this.baseUrl}/users/login`, {
             method: "POST",
@@ -22,7 +23,8 @@ export class ApiRequests {
         })
         .catch(err => console.log(err));
         return userLogin;
-    }
+    };
+
     static async register(body) {
         const newUser = await fetch(`${this.baseUrl}/users/register`, {
             method: "POST",
@@ -36,5 +38,29 @@ export class ApiRequests {
         })
         .catch(err => console.log(err));
         return newUser;
+    };
+
+    static async user(id) {
+        const user = await fetch(`${this.baseUrl}/users/${id}`, {
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err));
+
+        return user;
+    };
+
+    static async getPosts() {
+        const posts = await fetch(`${this.baseUrl}/posts?page=11`, {
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err));
+
+        return posts;
     }
 }
