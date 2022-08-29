@@ -19,6 +19,12 @@ time, mark, audio, video {
 	vertical-align: baseline;
     box-sizing: border-box;
 }
+:root {
+	--color-primary-1: #454d6b;
+	--color-primary-2: #6495edbf;
+	--color-primary-3: #5c5d8d;
+	--gray-1: #c3c3c3;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
