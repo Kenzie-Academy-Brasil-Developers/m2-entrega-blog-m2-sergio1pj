@@ -23,20 +23,24 @@ export class Render {
     };
 
     static createCard(post) {
-        //console.log(post)
+        
         const liTag = document.createElement('li');
         const imgTag = document.createElement('img');
-        const h2Tag = document.createElement('h2');
+        const h2TagDesktop = document.createElement('h2');
         const divUserTag = document.createElement('div');
+        const divPostTag = document.createElement('div');
+        const divDesktopTag = document.createElement('div');
         const pTag = document.createElement('p');
         const spanDateTag = document.createElement('span');
         const divTag = document.createElement('div');
         const btnEditTag = document.createElement('img');
         const btnRemoveTag = document.createElement('img');
+        const btnEditTagD = document.createElement('img');
+        const btnRemoveTagD = document.createElement('img');
         const user = localStorage.getItem('@kenzieBlog:userId');
 
         imgTag.src = post.user.avatarUrl;
-        h2Tag.innerText = `${post.user.username}`;
+        h2TagDesktop.innerText = `${post.user.username}`;
         pTag.innerText = `${post.content}`;
         const dateReceived = post.createdAt.substr(0,10).replace(/-/g,"/");
         let year = dateReceived.split("/")[0];
@@ -46,19 +50,28 @@ export class Render {
         spanDateTag.innerText = `${date}`;
         btnEditTag.src = "../assets/edit.png";
         btnRemoveTag.src = "../assets/trash.png";
+        btnEditTagD.src = "../assets/edit.png";
+        btnRemoveTagD.src = "../assets/trash.png";
 
         divTag.classList.add("options-user");
-        btnRemoveTag.classList.add("delete-post-btn");
-        btnEditTag.classList.add("edit-post-btn")
+        btnRemoveTagD.classList.add("delete-desktop-btn");
+        btnEditTagD.classList.add("edit-desktop-btn")
         btnEditTag.classList.add("edit-btn");
         btnRemoveTag.classList.add("remove-btn");
+        divUserTag.classList.add("user-info");
+        divDesktopTag.classList.add("desktop-user-info");
+        divPostTag.classList.add("post-text");
         btnRemoveTag.id = `${post.id}`;
+        btnRemoveTagD.id = `${post.id}`;
 
-        divUserTag.append(imgTag,h2Tag);
+        divUserTag.append(imgTag);
+        divDesktopTag.append(btnEditTagD, btnRemoveTagD);
+        divPostTag.append(h2TagDesktop, pTag, spanDateTag);
         divTag.append(btnEditTag, btnRemoveTag);
-        liTag.append(divUserTag,pTag,spanDateTag);
+        liTag.append(divUserTag,divPostTag);
         if(post.user.id == user) {
             liTag.append(divTag);
+            divUserTag.append(divDesktopTag);
         }
         return liTag;
     }
