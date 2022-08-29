@@ -40,6 +40,8 @@ class MainPage {
             this.showPosts(newPosts);
             Modal.showDeleteModal();
             Modal.hideDeleteModal();
+            Modal.showUpdateModal();
+            Modal.hideUpdateModal();
         });
     };
 
@@ -55,6 +57,23 @@ class MainPage {
             Modal.hideDeleteModal();
         });
     };
+    static updatePost() {
+        const updateBtn = document.getElementById("edit-btn");
+        updateBtn.addEventListener("click", async () => {
+            const postId = Number(localStorage.getItem('@kenzieBlog:postId'));
+            const postTxt = document.getElementById("edit-input");
+            const data = {
+                "content": postTxt.value 
+            };
+            await ApiRequests.updatePost(data, postId);
+            const posts = await ApiRequests.getPosts()
+            this.showPosts(posts);
+            Modal.showDeleteModal();
+            Modal.hideDeleteModal();
+            Modal.showUpdateModal();
+            Modal.hideUpdateModal();
+        });
+    }
 };
 
 const userId = Number(localStorage.getItem("@kenzieBlog:userId"));
@@ -68,3 +87,6 @@ MainPage.createPost();
 Modal.showDeleteModal();
 MainPage.deletePost();
 Modal.hideDeleteModal();
+Modal.showUpdateModal();
+MainPage.updatePost();
+Modal.hideUpdateModal();

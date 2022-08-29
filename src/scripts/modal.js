@@ -22,4 +22,28 @@ export class Modal {
         const modalDelete = document.querySelector(".modal-delete");
         modalDelete.classList.add('hidden');
     }
+
+    static showUpdateModal() {
+        const updateBtnDesktop = document.querySelectorAll(".edit-desktop-btn");
+        const updateBtn = document.querySelectorAll(".edit-btn");
+        const modalUpdate = document.querySelector(".modal-edit");
+        updateBtn.forEach((editBtn) => {
+            editBtn.addEventListener('click', (event) => {
+                localStorage.setItem('@kenzieBlog:postId', event.target.id);
+                modalUpdate.classList.toggle('hidden');
+            });
+        });
+
+        updateBtnDesktop.forEach((editBtn) => {
+            editBtn.addEventListener('click', (event) => {
+                localStorage.setItem('@kenzieBlog:postId', event.target.id);
+                modalUpdate.classList.toggle('hidden');
+            });
+        });
+    };
+
+    static hideUpdateModal() {
+        const modalUpdate = document.querySelector(".modal-edit");
+        modalUpdate.classList.add('hidden');
+    };
 }

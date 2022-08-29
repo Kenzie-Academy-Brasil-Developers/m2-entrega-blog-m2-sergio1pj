@@ -63,6 +63,8 @@ export class Render {
         divPostTag.classList.add("post-text");
         btnRemoveTag.id = `${post.id}`;
         btnRemoveTagD.id = `${post.id}`;
+        btnEditTag.id = `${post.id}`;
+        btnEditTagD.id = `${post.id}`;
 
         divUserTag.append(imgTag);
         divDesktopTag.append(btnEditTagD, btnRemoveTagD);

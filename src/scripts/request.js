@@ -91,8 +91,8 @@ export class ApiRequests {
         return deleteUserPost;
     };
 
-    static async updatePost(content, userId) {
-        const updateUserPost = await fetch(`${this.baseUrl}/posts/${userId}`, {
+    static async updatePost(content, id) {
+        const updateUserPost = await fetch(`${this.baseUrl}/posts/${id}`, {
             method: "PATCH",
             headers: this.headers,
             body: JSON.stringify(content)
