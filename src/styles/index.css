@@ -8,8 +8,7 @@ main {
     margin: 40px 20px 0 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 60px;
+    gap: 106px;
 }
 
 .container {
@@ -49,11 +48,10 @@ main {
 }
 
 .container .container__form input {
-    width: 300px;
-    height: 50px;
+    width: 297px;
+    height: 49px;
     border: 1px solid #454d6b;
     border-radius: 10px;
-    padding: 0 10px;
     font-family: Inter;
     font-size: 16px;
     font-weight: 700;
@@ -61,6 +59,8 @@ main {
 }
 
 .container .container__form input::placeholder {
+    position: relative;
+    left: 13px;
     font-size: 15px;
     font-weight: 400;
     line-height: 18px;
@@ -90,13 +90,14 @@ main {
 @media (min-width: 1200px) {
     main {
         width: 1147px;
-        flex-direction: row;
+        flex-direction: row-reverse;
+        justify-content: space-between;
         margin: 40px auto 0 auto;
     }
 
     .container {
-        width: 50%;
-        height: 100%;
-        padding: 0 20px;
+        width: 430px;
+        height: fit-content;
+        padding: 0 50px;
     }
 }
