@@ -55,6 +55,8 @@ class MainPage {
             this.showPosts(posts);
             Modal.showDeleteModal();
             Modal.hideDeleteModal();
+            Modal.showUpdateModal();
+            Modal.hideUpdateModal();
         });
     };
     static updatePost() {
