@@ -37,7 +37,6 @@ class MainPage {
             await ApiRequests.createUserPost(data);
             const newPosts = await ApiRequests.getPosts();
             postTxt.value = "";
-            console.log(newPosts)
             this.showPosts(newPosts);
             Modal.showDeleteModal();
             Modal.hideDeleteModal();

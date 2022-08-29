@@ -71,7 +71,7 @@ export class ApiRequests {
             body: JSON.stringify(content)
         })
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => res)
         .catch(err => console.log(err));
 
         return newPost;
