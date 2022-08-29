@@ -1,0 +1,330 @@
+body {
+    font-family: Inter;
+    background-color: #454D6B;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #6495ED;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+main {
+    height: calc(100vh - 80px);
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 60px;
+}
+
+#user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+} 
+
+#user-info > img {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+} 
+
+#user-info > span {
+    font-weight: 700;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    font-size: 20px;
+} 
+
+header > button {
+    width: 128px;
+    height: 38px;
+    background-color: #5C5D8D;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    font-family: Inter;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header > button:hover {
+    background-color: white;
+    color: #5C5D8D;
+    border: 1px solid #5C5D8D;
+}
+
+#form-post {
+    position: relative;
+}
+
+#form-post > input {
+    border: none;
+    width: calc(100% - 20px);
+    min-height: 110px;
+    background-color: #ECF0F1;
+    border-radius: 20px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+form > input:focus {
+    outline-color: #5C5D8D;
+}
+
+#add-post-btn {
+    position: absolute;
+    bottom: 3px;
+    right: 24px;
+    font-family: Inter;
+    font-size: 29px;
+    font-weight: 700;
+    color: white;
+    background-color: #5C5D8D;
+    border: none;
+    border-radius: 20px;
+    padding: 2px 20px;
+    cursor: pointer;
+}
+
+#add-post-btn:hover {
+    background-color: white;
+    color: #5C5D8D;
+    border: 1px solid #5C5D8D;
+}
+
+form > input::placeholder {
+    color: #363457;
+}
+
+#posts-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 56px;
+}
+
+li {
+    width: 100%;
+    background-color: #ECF0F1;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 13px 0 22px 0;
+}
+
+.user-info > img {
+    width: 79px;
+    height: 79px;
+    border-radius: 50%;
+}
+
+.post-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+}
+
+.post-text > h2 {
+    font-size: 24px;
+    color: #030000;
+    font-weight: 700;
+}
+
+.post-text > p, .post-text > span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    word-wrap: break-word;
+}
+
+.post-text > p {
+    margin: 16px 0 28px 0;
+}
+
+.options-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+} 
+
+.edit-btn, .remove-btn {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    cursor: pointer;
+} 
+
+.modal-delete, .modal-edit {
+    background-color: #00000090;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+#modal-delete-form, #modal-edit-form {
+    width: calc(100% - 40px);
+    padding: 50px 0 25px 0;
+    background-color: #6495ED;
+    color: white;
+    border-radius: 10px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#modal-delete-form > p, #modal-edit-form > p {
+    padding: 0 10px;
+    font-weight: 700;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#delete-post, #edit-btn {
+    background-color: #FF3F5B;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+#edit-btn {
+    background-color: #5C5D8D;
+}
+
+.hidden {
+    display: none;
+} 
+
+#modal-edit-form > input {
+    border: none;
+    width: calc(100% - 50px);
+    min-height: 110px;
+    background-color: #ECF0F1;
+    border-radius: 20px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+.desktop-user-info {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    header {
+        padding: 0 128px;
+    }
+
+    main {
+        margin: 74px 383px;
+        gap: 98px;
+    }
+
+    .options-user {
+        display: none;
+    }
+
+    .user-info {
+        width: min-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .desktop-user-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 8px;
+    }
+
+    .desktop-user-info:first-child {
+        width: 122px;
+        height: 122px;
+        border-radius: 50%;
+    }
+
+    .delete-desktop-btn, .edit-desktop-btn {
+        width: 47px;
+        height: 47px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    li {
+        width: 100%;
+        background-color: #ECF0F1;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+        padding: 26px;
+    }
+
+    .post-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .post-text > span {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+    }
+
+    #modal-delete-form, #modal-edit-form {
+        width: 30%;
+        padding: 50px 0 25px 0;
+        background-color: #6495ED;
+        color: white;
+        border-radius: 10px;
+        font-size: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+}
