@@ -23,11 +23,11 @@ class Login {
 }
 class Register {
     static renderRegister() {
-        const nomeInput = document.querySelector("#nome");
-        const emailInput = document.querySelector("#emailRegister");
+        const nomeInput = document.querySelector("#nomeCadastro");
+        const emailInput = document.querySelector("#emailCadastro");
         const fotoInput = document.querySelector("#foto");
-        const passwordInput = document.querySelector("#senhaRegister");
-        const registerButton = document.querySelector("#btnRegister");
+        const passwordInput = document.querySelector("#senhaCadastro");
+        const registerButton = document.querySelector("#btnCadastro");
         registerButton.addEventListener("click", async (e) => {
             e.preventDefault();
             const body = {
